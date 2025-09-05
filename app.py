@@ -5,12 +5,18 @@ import pickle
 from datetime import datetime
 import matplotlib.pyplot as plt
 
+
+import pickle
+from sklearn.ensemble import RandomForestRegressor
 # Set Streamlit page config first thing
 st.set_page_config(page_title="EV Forecast", layout="wide")
+# Train model
+model = RandomForestRegressor()
+model.fit(X_train, y_train)
 
-# === Load trained model ===
-with open("forecasting_ev_model.pkl", "rb") as f:
-    model = pickle.load(f)
+# Save trained model to .pkl
+with open("forecasting_ev_model.pkl", "wb") as f:
+    pickle.dump(model, f)
 
     
 st.markdown("""
