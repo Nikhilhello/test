@@ -11,6 +11,8 @@ st.set_page_config(page_title="EV Forecast", layout="wide")
 # === Load model safely with pickle ===
 with open("forecasting_ev_model.pkl", "rb") as f:
     model = pickle.load(f)
+
+model = saved["model"]   # extract the actual model
     
 st.markdown("""
     <style>
