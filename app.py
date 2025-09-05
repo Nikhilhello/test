@@ -1,16 +1,17 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
+import pickle
 from datetime import datetime
 import matplotlib.pyplot as plt
 
 # Set Streamlit page config first thing
 st.set_page_config(page_title="EV Forecast", layout="wide")
 
-# === Load model ===
-model = joblib.load('forecasting_ev_model.pkl')
-
+# === Load model safely with pickle ===
+with open("forecasting_ev_model.pkl", "rb") as f:
+    model = pickle.load(f)
+    
 st.markdown("""
     <style>
         /* Global Styles */
