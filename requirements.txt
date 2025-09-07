@@ -3,6 +3,4 @@ pandas
 numpy
 joblib
 matplotlib
-scikit-learn
-
 sklearn
