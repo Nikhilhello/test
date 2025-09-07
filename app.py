@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import skops.io as sio
 
 # Save
-sio.dump(model, "forecasting_ev_model.skops")
+# sio.dump(model, "forecasting_ev_model.skops")
 
 # Load
 model = sio.load("forecasting_ev_model.skops", trusted=True)
