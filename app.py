@@ -7,12 +7,15 @@ import matplotlib.pyplot as plt
 
 
 import skops.io as sio
+import joblib
+
+model = joblib.load("forecasting_ev_model.pkl")
 
 # Save
 # sio.dump(model, "forecasting_ev_model.skops")
 
 # Load
-model = sio.load("forecasting_ev_model.skops", trusted=True)
+# model = sio.load("forecasting_ev_model.skops", trusted=True)
 
 # ---------------------------
 # Page Config
