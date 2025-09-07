@@ -130,13 +130,7 @@ for i in range(1, forecast_horizon + 1):
     }
 
     # ✅ Safe predict
-    # input_df = pd.DataFrame([new_row]).astype(float).fillna(0)
-    # pred = float(model.predict(input_df)[0])
-
-    # Ensure correct feature order & no NaN
-    feature_names = model.feature_names_in_   # works for sklearn>=1.0
-    input_df = pd.DataFrame([new_row], columns=feature_names).fillna(0)
-    
+    input_df = pd.DataFrame([new_row]).astype(float).fillna(0)
     pred = float(model.predict(input_df)[0])
 
     future_rows.append({"Date": forecast_date, "Predicted EV Total": round(pred)})
